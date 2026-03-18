@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Username Generator</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: white;
+  text-align: center;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+  padding: 30px;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+p {
+  color: #94a3b8;
+}
+
+input, select, button {
+  width: 100%;
+  padding: 14px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+}
+
+button {
+  background: #22c55e;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  transform: scale(1.03);
+}
+
+.copy-all {
+  background: #38bdf8;
+}
+
+.result {
+  background: #1e293b;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.copy-btn {
+  background: #6366f1;
+  border: none;
+  padding: 6px 10px;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.footer {
+  margin-top: 30px;
+  font-size: 14px;
+  color: #94a3b8;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>🔥 Username Generator</h1>
+  <p>Create unique usernames instantly</p>
+
+  <input type="text" id="name" placeholder="Enter your name">
+
+  <select id="style">
+    <option value="cool">Cool 😎</option>
+    <option value="aesthetic">Aesthetic 🌙</option>
+    <option value="gaming">Gaming 🎮</option>
+    <option value="business">Business 💼</option>
+  </select>
+
+  <button onclick="generate()">Generate Usernames</button>
+  <button class="copy-all" onclick="copyAll()">Copy All</button>
+
+  <div id="output"></div>
+
+  <div class="footer">Free tool • Made for creators 🚀</div>
+</div>
+
+<script>
+function generate() {
+  const name = document.getElementById("name").value || "user";
+  const style = document.getElementById("style").value;
+  const output = document.getElementById("output");
+
+  let words = {
+    cool: ["x", "pro", "king", "vibe", "zone"],
+    aesthetic: ["moon", "cloud", "soft", "dream", "mist"],
+    gaming: ["killer", "sniper", "ghost", "legend", "shadow"],
+    business: ["official", "global", "brand", "hq", "group"]
+  };
+
+  let list = [];
+
+  for (let i = 0; i < 12; i++) {
+    let w = words[style][Math.floor(Math.random() * words[style].length)];
+    let num = Math.floor(Math.random() * 999);
+    list.push(name + "_" + w + num);
+  }
+
+  output.innerHTML = "";
+
+  list.forEach(item => {
+    const div = document.createElement("div");
+    div.className = "result";
+
+    div.innerHTML = `
+      <span>${item}</span>
+      <button class="copy-btn" onclick="copyText('${item}')">Copy</button>
+    `;
+
+    output.appendChild(div);
+  });
+}
+
+function copyText(text) {
+  navigator.clipboard.writeText(text);
+  alert("Copied!");
+}
+
+function copyAll() {
+  const items = document.querySelectorAll(".result span");
+  let text = "";
+  items.forEach(i => text += i.innerText + "\\n");
+  navigator.clipboard.writeText(text);
+  alert("All copied!");
+}
+</script>
+
+</body>
+</html>
