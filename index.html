@@ -3,11 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🔥 Ultimate Username Generator | MegaTools</title>
+<title>🔥 Ultimate Jaw-Dropping Username Generator | MegaTools</title>
+<meta name="description" content="Generate unique, aesthetic, and professional usernames instantly for Instagram, Gaming, Business & more. Free, fast, and interactive!">
+<meta name="keywords" content="username generator, Instagram usernames, gaming names, business names, cool usernames, aesthetic usernames, free tool">
+<meta name="author" content="MegaTools">
+
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-  /* Global Styles */
+  /* Global */
   * { box-sizing: border-box; margin:0; padding:0; font-family: 'Montserrat', sans-serif; }
   body {
     background: linear-gradient(135deg, #0f172a, #1e293b);
@@ -19,15 +23,17 @@
     padding: 50px 10px;
   }
 
+  /* Container */
   .container {
     background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(20px);
     border-radius: 25px;
-    padding: 40px;
-    max-width: 700px;
+    padding: 50px;
+    max-width: 750px;
     width: 100%;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    box-shadow: 0 25px 70px rgba(0,0,0,0.6);
     animation: fadeIn 1s ease forwards;
+    border: 1px solid rgba(255,255,255,0.2);
   }
 
   @keyframes fadeIn {
@@ -35,38 +41,52 @@
     100% {opacity:1; transform: translateY(0);}
   }
 
+  /* Header */
   h1 {
-    font-size: 36px;
+    font-size: 40px;
     margin-bottom: 10px;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
+    text-shadow: 0 2px 10px rgba(34,197,94,0.8);
   }
 
   p {
     font-size: 16px;
     color: #94a3b8;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
   }
 
+  /* Inputs & Dropdown */
   input, select, button {
     width: 100%;
     padding: 16px 20px;
-    margin: 10px 0;
+    margin: 12px 0;
     border-radius: 15px;
     border: none;
     font-size: 16px;
     outline: none;
-  }
-
-  input, select {
-    background: rgba(255,255,255,0.1);
-    color: #ffffff;
     transition: 0.3s;
   }
 
-  input:focus, select:focus {
-    background: rgba(255,255,255,0.2);
+  input {
+    background: rgba(255,255,255,0.08);
+    color: #fff;
   }
 
+  input:focus { background: rgba(255,255,255,0.15); }
+
+  select {
+    background: rgba(255,255,255,0.08);
+    color: #000;
+  }
+
+  select option {
+    color: #000;
+    background: #fff;
+  }
+
+  select:focus { background: rgba(255,255,255,0.15); }
+
+  /* Buttons */
   button {
     background: linear-gradient(90deg, #22c55e, #38bdf8);
     color: #000;
@@ -74,24 +94,23 @@
     cursor: pointer;
     transition: 0.3s;
     border-radius: 15px;
-    margin-top: 10px;
   }
 
   button:hover {
     transform: scale(1.05);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
   }
 
   .copy-all {
     background: linear-gradient(90deg, #facc15, #f43f5e);
-    margin-bottom: 20px;
   }
 
+  /* Results */
   .result {
     background: rgba(255,255,255,0.1);
-    padding: 14px 20px;
-    margin: 10px 0;
-    border-radius: 15px;
+    padding: 16px 22px;
+    margin: 12px 0;
+    border-radius: 18px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -101,13 +120,14 @@
   .result:hover {
     background: rgba(255,255,255,0.2);
     transform: translateX(3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
   }
 
   .copy-btn {
     background: #6366f1;
     color: white;
-    padding: 8px 14px;
-    border-radius: 10px;
+    padding: 8px 16px;
+    border-radius: 12px;
     border: none;
     cursor: pointer;
     transition: 0.3s;
@@ -115,8 +135,27 @@
 
   .copy-btn:hover {
     transform: scale(1.1);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
   }
+
+  /* Monetization Sections */
+  .monetize {
+    margin-top: 35px;
+    padding: 25px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(15px);
+    text-align: center;
+  }
+
+  .monetize a {
+    color: #38bdf8;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  .monetize a:hover { text-decoration: underline; }
 
   .footer {
     margin-top: 30px;
@@ -129,8 +168,8 @@
 
 <body>
 <div class="container">
-  <h1>🔥 Ultimate Username Generator</h1>
-  <p>Create unique, aesthetic, and memorable usernames instantly!</p>
+  <h1>🚀 Jaw-Dropping Username Generator</h1>
+  <p>Discover aesthetic, gaming, cool & professional usernames instantly!</p>
 
   <input type="text" id="name" placeholder="Enter your name or keyword">
 
@@ -139,6 +178,7 @@
     <option value="aesthetic">Aesthetic 🌙</option>
     <option value="gaming">Gaming 🎮</option>
     <option value="business">Business 💼</option>
+    <option value="random">Random 🌟</option>
   </select>
 
   <button onclick="generate()">Generate Usernames</button>
@@ -146,7 +186,22 @@
 
   <div id="output"></div>
 
-  <div class="footer">Free tool • Made for creators 🚀</div>
+  <!-- Affiliate / Donation Section -->
+  <div class="monetize">
+    <p>Support the tool or check out recommended services:</p>
+    <a href="https://www.buymeacoffee.com/yourprofile" target="_blank">
+      ☕ Buy Me a Coffee
+    </a><br><br>
+    <a href="https://www.namecheap.com/?affiliate=yourcode" target="_blank">
+      🌐 Get Your Custom Domain
+    </a><br><br>
+    <!-- Placeholder Ad Slot -->
+    <div style="margin-top:20px; background: rgba(255,255,255,0.1); color: #fff; padding: 12px; border-radius: 12px;">
+      Your Ad Could Appear Here 🚀
+    </div>
+  </div>
+
+  <div class="footer">© 2026 MegaTools • Made with ❤️ for creators</div>
 </div>
 
 <script>
@@ -156,14 +211,14 @@ function generate() {
   const output = document.getElementById("output");
 
   let words = {
-    cool: ["x", "pro", "king", "vibe", "zone", "elite", "flash", "legend"],
-    aesthetic: ["moon", "cloud", "soft", "dream", "mist", "star", "dusk", "echo"],
-    gaming: ["killer", "sniper", "ghost", "legend", "shadow", "blade", "strike", "rage"],
-    business: ["official", "global", "brand", "hq", "group", "inc", "ventures", "team"]
+    cool: ["x","pro","king","vibe","zone","elite","flash","legend"],
+    aesthetic: ["moon","cloud","soft","dream","mist","star","dusk","echo"],
+    gaming: ["killer","sniper","ghost","legend","shadow","blade","strike","rage"],
+    business: ["official","global","brand","hq","group","inc","ventures","team"],
+    random: ["alpha","nova","prime","matrix","zen","pulse","cyber","neo"]
   };
 
   let list = [];
-
   for (let i = 0; i < 15; i++) {
     let w = words[style][Math.floor(Math.random() * words[style].length)];
     let num = Math.floor(Math.random() * 999);
@@ -175,10 +230,8 @@ function generate() {
   list.forEach(item => {
     const div = document.createElement("div");
     div.className = "result";
-
     div.innerHTML = `<span>${item}</span>
                      <button class="copy-btn" onclick="copyText('${item}')">Copy</button>`;
-
     output.appendChild(div);
   });
 }
@@ -196,6 +249,5 @@ function copyAll() {
   alert("All copied!");
 }
 </script>
-
 </body>
 </html>
