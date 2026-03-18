@@ -3,89 +3,136 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Username Generator</title>
+<title>🔥 Ultimate Username Generator | MegaTools</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #0f172a, #1e293b);
-  color: white;
-  text-align: center;
-}
+  /* Global Styles */
+  * { box-sizing: border-box; margin:0; padding:0; font-family: 'Montserrat', sans-serif; }
+  body {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 50px 10px;
+  }
 
-.container {
-  max-width: 600px;
-  margin: auto;
-  padding: 30px;
-}
+  .container {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(15px);
+    border-radius: 25px;
+    padding: 40px;
+    max-width: 700px;
+    width: 100%;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    animation: fadeIn 1s ease forwards;
+  }
 
-h1 {
-  font-size: 30px;
-}
+  @keyframes fadeIn {
+    0% {opacity: 0; transform: translateY(-20px);}
+    100% {opacity:1; transform: translateY(0);}
+  }
 
-p {
-  color: #94a3b8;
-}
+  h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+  }
 
-input, select, button {
-  width: 100%;
-  padding: 14px;
-  margin: 10px 0;
-  border-radius: 10px;
-  border: none;
-  font-size: 16px;
-}
+  p {
+    font-size: 16px;
+    color: #94a3b8;
+    margin-bottom: 30px;
+  }
 
-button {
-  background: #22c55e;
-  color: black;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.2s;
-}
+  input, select, button {
+    width: 100%;
+    padding: 16px 20px;
+    margin: 10px 0;
+    border-radius: 15px;
+    border: none;
+    font-size: 16px;
+    outline: none;
+  }
 
-button:hover {
-  transform: scale(1.03);
-}
+  input, select {
+    background: rgba(255,255,255,0.1);
+    color: #ffffff;
+    transition: 0.3s;
+  }
 
-.copy-all {
-  background: #38bdf8;
-}
+  input:focus, select:focus {
+    background: rgba(255,255,255,0.2);
+  }
 
-.result {
-  background: #1e293b;
-  padding: 12px;
-  margin: 8px 0;
-  border-radius: 10px;
-  display: flex;
-  justify-content: space-between;
-}
+  button {
+    background: linear-gradient(90deg, #22c55e, #38bdf8);
+    color: #000;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 15px;
+    margin-top: 10px;
+  }
 
-.copy-btn {
-  background: #6366f1;
-  border: none;
-  padding: 6px 10px;
-  color: white;
-  border-radius: 6px;
-  cursor: pointer;
-}
+  button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  }
 
-.footer {
-  margin-top: 30px;
-  font-size: 14px;
-  color: #94a3b8;
-}
+  .copy-all {
+    background: linear-gradient(90deg, #facc15, #f43f5e);
+    margin-bottom: 20px;
+  }
+
+  .result {
+    background: rgba(255,255,255,0.1);
+    padding: 14px 20px;
+    margin: 10px 0;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s;
+  }
+
+  .result:hover {
+    background: rgba(255,255,255,0.2);
+    transform: translateX(3px);
+  }
+
+  .copy-btn {
+    background: #6366f1;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .copy-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+  }
+
+  .footer {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #94a3b8;
+    text-align: center;
+  }
 </style>
 </head>
 
 <body>
-
 <div class="container">
-  <h1>🔥 Username Generator</h1>
-  <p>Create unique usernames instantly</p>
+  <h1>🔥 Ultimate Username Generator</h1>
+  <p>Create unique, aesthetic, and memorable usernames instantly!</p>
 
-  <input type="text" id="name" placeholder="Enter your name">
+  <input type="text" id="name" placeholder="Enter your name or keyword">
 
   <select id="style">
     <option value="cool">Cool 😎</option>
@@ -109,15 +156,15 @@ function generate() {
   const output = document.getElementById("output");
 
   let words = {
-    cool: ["x", "pro", "king", "vibe", "zone"],
-    aesthetic: ["moon", "cloud", "soft", "dream", "mist"],
-    gaming: ["killer", "sniper", "ghost", "legend", "shadow"],
-    business: ["official", "global", "brand", "hq", "group"]
+    cool: ["x", "pro", "king", "vibe", "zone", "elite", "flash", "legend"],
+    aesthetic: ["moon", "cloud", "soft", "dream", "mist", "star", "dusk", "echo"],
+    gaming: ["killer", "sniper", "ghost", "legend", "shadow", "blade", "strike", "rage"],
+    business: ["official", "global", "brand", "hq", "group", "inc", "ventures", "team"]
   };
 
   let list = [];
 
-  for (let i = 0; i < 12; i++) {
+  for (let i = 0; i < 15; i++) {
     let w = words[style][Math.floor(Math.random() * words[style].length)];
     let num = Math.floor(Math.random() * 999);
     list.push(name + "_" + w + num);
@@ -129,10 +176,8 @@ function generate() {
     const div = document.createElement("div");
     div.className = "result";
 
-    div.innerHTML = `
-      <span>${item}</span>
-      <button class="copy-btn" onclick="copyText('${item}')">Copy</button>
-    `;
+    div.innerHTML = `<span>${item}</span>
+                     <button class="copy-btn" onclick="copyText('${item}')">Copy</button>`;
 
     output.appendChild(div);
   });
@@ -146,7 +191,7 @@ function copyText(text) {
 function copyAll() {
   const items = document.querySelectorAll(".result span");
   let text = "";
-  items.forEach(i => text += i.innerText + "\\n");
+  items.forEach(i => text += i.innerText + "\n");
   navigator.clipboard.writeText(text);
   alert("All copied!");
 }
